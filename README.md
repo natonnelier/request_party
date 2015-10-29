@@ -1,6 +1,6 @@
 # RequestParty
 
-TODO: Write a gem description
+This gem uses [httparty](https://github.com/jnunemaker/httparty) to create custom requests
 
 ## Installation
 
@@ -18,7 +18,41 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Start with setting the base_uri on initializing:
+
+  RequestParty.new("http://my-site/api")
+
+Make a POST request:
+
+  request = RequestParty.new("http://my-site/api")
+  request.post("/user/authenticate", body_hash)
+
+or just:
+
+  RequestParty.new("http://my-site/api").post("/user/authenticate", body_hash)
+
+Where the parameter body_hash equals the Hash for the request's body.
+
+Make a GET request:
+
+  request = RequestParty.new("http://my-site/api")
+  request.get("/user/12")
+
+or just:
+
+  RequestParty.new("http://my-site/api").get("/user/12")
+
+Make PUT request:
+
+  request = RequestParty.new("http://my-site/api")
+  request.put("/user/12/update", body_hash)
+
+or just:
+
+  RequestParty.new("http://my-site/api").put("/user/authenticate", body_hash)
+
+Where the parameter body_hash equals the Hash for the request's body.
+
 
 ## Contributing
 
